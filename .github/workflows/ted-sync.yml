@@ -1,0 +1,71 @@
+name: Update TED procurement data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Fetch recent Swedish TED notices
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python - <<'PY'
+          import datetime, json, urllib.request
+          from pathlib import Path
+
+          since = (datetime.date.today() - datetime.timedelta(days=365)).strftime("%Y%m%d")
+          payload = {
+              "query": f"buyer-country = SWE AND publication-date >= {since}",
+              "fields": [
+                  "publication-number",
+                  "publication-date",
+                  "notice-title",
+                  "buyer-name",
+                  "buyer-country",
+                  "classification-cpv",
+                  "deadline-receipt-tender-date-lot",
+                  "notice-type"
+              ],
+              "limit": 250,
+              "scope": "ACTIVE",
+              "paginationMode": "PAGE_NUMBER",
+              "page": 1,
+              "checkQuerySyntax": True
+          }
+          req = urllib.request.Request(
+              "https://api.ted.europa.eu/v3/notices/search",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json", "Accept": "application/json"},
+              method="POST"
+          )
+          with urllib.request.urlopen(req, timeout=60) as response:
+              data = json.loads(response.read().decode("utf-8"))
+          if "notices" not in data:
+              raise RuntimeError("TED response did not contain notices: " + json.dumps(data)[:1000])
+          out = {
+              "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              "source": "TED Search API",
+              "total_notice_count": data.get("totalNoticeCount"),
+              "notices": data["notices"]
+          }
+          Path("data").mkdir(exist_ok=True)
+          Path("data/notices.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+          print(f"Saved {len(out['notices'])} notices")
+          PY
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/notices.json
+          git diff --cached --quiet || (git commit -m "Update TED procurement data" && git push)
