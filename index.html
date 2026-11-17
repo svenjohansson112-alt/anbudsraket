@@ -31,8 +31,8 @@
 const $=id=>document.getElementById(id);
 function val(x){if(x==null)return '';if(typeof x==='string'||typeof x==='number')return String(x);if(Array.isArray(x))return x.map(val).filter(Boolean).join(', ');if(typeof x==='object'){for(const k of ['swe','SWE','eng','ENG','value','text','date'])if(x[k]!=null)return val(x[k]);return Object.values(x).map(val).filter(Boolean).join(', ')}return ''}
 function field(n,k){return val(n[k]??n[k.replaceAll('-','_')]??'')}
-function date(s){if(!s)return '';let d=new Date(s);return isNaN(d)?String(s):d.toLocaleDateString('sv-SE')}
-function parsedDate(s){if(!s)return null;let d=new Date(s);return isNaN(d)?null:d}
+function date(s){if(!s)return '';let m=String(s).match(/^(\\d{4}-\\d{2}-\\d{2})/);let d=m?new Date(m[1]+'T00:00:00'):new Date(s);return isNaN(d)?String(s):d.toLocaleDateString('sv-SE')}
+function parsedDate(s){if(!s)return null;let m=String(s).match(/^(\\d{4}-\\d{2}-\\d{2})/);let d=m?new Date(m[1]+'T00:00:00'):new Date(s);return isNaN(d)?null:d}
 let latestHits=[];function calc(){let h=Number($('hours').value)||0,s=Number($('sell').value)||0,c=Number($('cost').value)||0,e=Number($('extra').value)||0,rev=h*s,profit=rev-h*c-e,margin=rev?profit/rev*100:0;$('revenue').textContent=Math.round(rev).toLocaleString('sv-SE')+' kr';$('profit').textContent=Math.round(profit).toLocaleString('sv-SE')+' kr';$('margin').textContent=margin.toFixed(1).replace('.',',')+' %';$('profit').style.color=profit>=0?'var(--mint)':'#ffaaaa'}['hours','sell','cost','extra'].forEach(id=>$(id)?.addEventListener('input',calc));calc();
 function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function score(n,words){let title=field(n,'notice-title').toLocaleLowerCase('sv'),cpv=field(n,'classification-cpv'),hay=(title+' '+cpv+' '+field(n,'buyer-name')).toLocaleLowerCase('sv');let points=0;for(const w of words){if(title.includes(w))points+=3;else if(hay.includes(w))points+=1}if(/städ|lokalvård|fönsterputs|måleri|rengör/i.test(title))points+=2;return points}
