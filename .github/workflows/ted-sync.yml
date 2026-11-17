@@ -37,7 +37,7 @@ jobs:
                   "notice-type"
               ],
               "limit": 250,
-              "scope": "ACTIVE",
+              "scope": "ALL",
               "paginationMode": "PAGE_NUMBER",
               "page": 1,
               "checkQuerySyntax": True
@@ -52,6 +52,8 @@ jobs:
               data = json.loads(response.read().decode("utf-8"))
           if "notices" not in data:
               raise RuntimeError("TED response did not contain notices: " + json.dumps(data)[:1000])
+          if not data["notices"]:
+              raise RuntimeError("TED returned zero notices for the date query. Response: " + json.dumps(data)[:1500])
           out = {
               "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
               "source": "TED Search API",
