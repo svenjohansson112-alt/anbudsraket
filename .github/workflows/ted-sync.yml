@@ -23,9 +23,9 @@ jobs:
           import datetime, json, urllib.request
           from pathlib import Path
 
-          since = (datetime.date.today() - datetime.timedelta(days=365)).strftime("%Y%m%d")
+          since = (datetime.date.today() - datetime.timedelta(days=90)).strftime("%Y%m%d")
           payload = {
-              "query": f"publication-date>={since}",
+              "query": f"publication-date>={since} AND buyer-country=SWE",
               "fields": [
                   "publication-number",
                   "publication-date",
@@ -37,7 +37,7 @@ jobs:
                   "notice-type"
               ],
               "limit": 250,
-              "scope": "ALL",
+              "scope": "ACTIVE",
               "paginationMode": "PAGE_NUMBER",
               "page": 1,
               "checkQuerySyntax": False
