@@ -25,7 +25,7 @@ jobs:
 
           since = (datetime.date.today() - datetime.timedelta(days=365)).strftime("%Y%m%d")
           payload = {
-              "query": f"buyer-country = SWE AND publication-date >= {since}",
+              "query": f"publication-date>={since}",
               "fields": [
                   "publication-number",
                   "publication-date",
