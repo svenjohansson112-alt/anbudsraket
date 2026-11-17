@@ -2,6 +2,10 @@ name: Update TED procurement data
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/ted-sync.yml"
   schedule:
     - cron: "17 4 * * *"
 
