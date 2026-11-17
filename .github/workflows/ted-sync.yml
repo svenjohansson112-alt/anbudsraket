@@ -23,7 +23,7 @@ jobs:
           import datetime, json, urllib.request
           from pathlib import Path
 
-          since = (datetime.date.today() - datetime.timedelta(days=90)).strftime("%Y%m%d")
+          since = (datetime.date.today() - datetime.timedelta(days=30)).strftime("%Y%m%d")
           payload = {
               "query": f"publication-date>={since} AND buyer-country=SWE",
               "fields": [
