@@ -40,7 +40,7 @@ jobs:
               "scope": "ALL",
               "paginationMode": "PAGE_NUMBER",
               "page": 1,
-              "checkQuerySyntax": True
+              "checkQuerySyntax": False
           }
           req = urllib.request.Request(
               "https://api.ted.europa.eu/v3/notices/search",
