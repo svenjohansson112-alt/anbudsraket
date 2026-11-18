@@ -35,6 +35,6 @@ A procurement/tender software company, vertical SaaS operator, developer, agency
 Owner is focusing on other projects and wants a quick asset sale.
 
 ## Sale process
-Serious buyers can inspect the live demo and public source first. The scope of transfer and any support are agreed directly before sale. **No transfer of accounts, repository ownership, domain, or assets occurs before the payment is verified and terms are agreed.**
+Serious buyers can inspect the live demo and public source first. **The source repository is public, so the code is already viewable and no claim of exclusive secrecy is made.** Any transaction will cover only the rights and assets the owner can transfer, with the exact scope and any support agreed in writing. No transfer of accounts, repository ownership, domain, or other assets occurs before terms are agreed and payment is verified.
 
 For acquisition enquiries, contact the repository owner through GitHub: https://github.com/svenjohansson112-alt
