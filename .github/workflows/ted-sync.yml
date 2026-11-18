@@ -24,9 +24,6 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: |
           python - <<'PY'
-          import datetime, json, urllib.request
-          from pathlib import Path
-
           import datetime, json, time, urllib.request, urllib.error
           from pathlib import Path
 
@@ -115,7 +112,8 @@ jobs:
           }
           Path("data").mkdir(exist_ok=True)
           Path("data/notices.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-          print(f"Saved {len(notices)} notices across {page} pages")          PY
+          print(f"Saved {len(notices)} notices across {page} pages")
+          PY
 
       - name: Commit updated data
         run: |
