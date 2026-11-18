@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gratis anbudskalkylator – räkna på jobb och vinst | AnbudsRaket</title>
+<meta name="description" content="Gratis anbudskalkylator för små företag. Räkna arbetskostnad, material, resor, risk, vinstmarginal och lägsta pris innan du lämnar offert eller anbud.">
+<link rel="canonical" href="https://svenjohansson112-alt.github.io/anbudsraket/kalkylator.html">
+<meta name="robots" content="index,follow"><meta name="theme-color" content="#08111f">
+<meta property="og:title" content="Gratis anbudskalkylator – räkna innan du lämnar anbud">
+<meta property="og:description" content="Räkna ut kostnad, vinst och lägsta pris på några sekunder. Gratis verktyg från AnbudsRaket.">
+<meta property="og:url" content="https://svenjohansson112-alt.github.io/anbudsraket/kalkylator.html">
+<style>
+:root{--bg:#08111f;--panel:#111e31;--line:#293b54;--muted:#a9b8cb;--text:#f4f7fb;--mint:#67e4b5;--warn:#ffd27b}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#08111f,#0c1c2d 70%,#0b292b);color:var(--text);font:16px/1.55 system-ui,Arial}.wrap{max-width:850px;margin:auto;padding:22px 16px 55px}.brand{font-weight:900;letter-spacing:.7px}.brand span{color:var(--mint)}a{color:var(--mint)}.hero{padding:32px 0 12px}.eyebrow{color:var(--mint);font-size:12px;letter-spacing:1.4px;text-transform:uppercase}.hero h1{font-size:clamp(32px,6vw,52px);line-height:1.06;margin:10px 0}.muted{color:var(--muted)}.panel{background:#111e31ed;border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}label{display:block;color:var(--muted);font-size:13px;margin-bottom:5px}input{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:#091526;color:var(--text);font:inherit}button{border:0;border-radius:9px;padding:12px 16px;background:var(--mint);color:#062017;font-weight:800;cursor:pointer}.results{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#091526;border:1px solid var(--line);border-radius:11px;padding:12px}.stat b{display:block;font-size:clamp(20px,4vw,27px);color:var(--mint)}.stat span{font-size:12px;color:var(--muted)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.notice{border-left:3px solid var(--warn);padding:10px 12px;background:#2a2518;color:#f9dfaa;font-size:13px}.faq h3{margin-bottom:4px}.faq p{color:var(--muted)}@media(max-width:600px){.grid,.results{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main class="wrap">
+<div class="brand">ANBUDS<span>RAKET</span> AI</div>
+<section class="hero"><div class="eyebrow">Gratis verktyg • Inga konton • Ingen registrering</div><h1>Räkna på jobbet.<br>Se vad du faktiskt tjänar.</h1><p class="muted">Räkna arbetskostnad, material, resor, övriga kostnader och risk. Se vilket pris du behöver för att nå din önskade marginal – innan du lämnar offert eller anbud.</p></section>
+<section class="panel"><h2>Din kalkyl</h2><div class="grid">
+<div><label for="hours">Arbetstimmar totalt</label><input id="hours" type="number" min="0" step="0.5" value="100"></div>
+<div><label for="hourCost">Kostnad per arbetstimme inkl. påslag (kr)</label><input id="hourCost" type="number" min="0" step="1" value="250"></div>
+<div><label for="material">Material / inköp (kr)</label><input id="material" type="number" min="0" step="1" value="5000"></div>
+<div><label for="travel">Resor / transport (kr)</label><input id="travel" type="number" min="0" step="1" value="1000"></div>
+<div><label for="other">Övriga kostnader (kr)</label><input id="other" type="number" min="0" step="1" value="1500"></div>
+<div><label for="risk">Risk / oförutsett (%)</label><input id="risk" type="number" min="0" max="100" step="1" value="10"></div>
+<div><label for="margin">Önskad vinstmarginal (%)</label><input id="margin" type="number" min="0" max="90" step="1" value="20"></div>
+<div><label for="bid">Ditt tänkta pris exkl. moms (kr)</label><input id="bid" type="number" min="0" step="100" value="40000"></div>
+</div><div class="results" style="margin-top:16px">
+<div class="stat"><b id="totalCost">—</b><span>Beräknad total kostnad inkl. risk</span></div>
+<div class="stat"><b id="minPrice">—</b><span>Lägsta pris för önskad marginal</span></div>
+<div class="stat"><b id="profit">—</b><span>Vinst vid ditt tänkta pris</span></div>
+<div class="stat"><b id="actualMargin">—</b><span>Vinstmarginal vid tänkt pris</span></div>
+</div><p id="advice" class="notice" style="margin-top:12px">Fyll i dina värden. Kalkylen är ett beslutsstöd – inte en garanti.</p><div class="actions"><button id="share">Dela min kalkyl</button><button id="reset" type="button">Återställ</button></div><p class="muted" id="shareMsg" style="font-size:13px"></p></section>
+<section class="panel"><h2>Vad är skillnaden mellan påslag och marginal?</h2><p class="muted"><b>Marginal</b> är vinsten som andel av försäljningspriset. <b>Påslag</b> är vinsten i förhållande till kostnaden. 20 % marginal kräver exempelvis ett högre pris än 20 % påslag. Den här kalkylatorn räknar på marginal.</p></section>
+<section class="panel faq"><h2>Vanliga frågor</h2><h3>Är kalkylatorn gratis?</h3><p>Ja. Den är gratis och kräver inget konto. Dina inmatade värden behandlas i webbläsaren och skickas inte till AnbudsRaket.</p><h3>Är moms medräknad?</h3><p>Nej. Kalkylen räknar priser exklusive moms. Kontrollera momsreglerna för din verksamhet och ditt uppdrag.</p><h3>Vad ska jag räkna in i arbetskostnaden?</h3><p>Ta med lön, arbetsgivaravgifter, semester, pension och andra relevanta personalkostnader. Lägg även in kostnader som annars riskerar att glömmas: administration, försäkring, utrustning, restid, materialspill och risk.</p></section>
+<section class="panel"><h2>Hitta jobb att räkna på</h2><p class="muted">När kalkylen ser bra ut – hitta upphandlingar och prioritera vilka affärer som är värda din tid.</p><a href="./">Öppna AnbudsRaket och sök upphandlingar ↗</a></section>
+<footer class="muted" style="font-size:12px">Gratis verktyg från AnbudsRaket AI. Oberoende tjänst. Kalkylen är en uppskattning och ersätter inte en fullständig budget eller offertkalkyl.</footer>
+</main>
+<script>
+const ids=['hours','hourCost','material','travel','other','risk','margin','bid'];const $=id=>document.getElementById(id);const fmt=n=>Math.round(n).toLocaleString('sv-SE')+' kr';function calculate(){const h=Number($('hours').value)||0,c=Number($('hourCost').value)||0,m=Number($('material').value)||0,t=Number($('travel').value)||0,o=Number($('other').value)||0,r=Math.max(0,Number($('risk').value)||0)/100,mar=Math.max(0,Math.min(89.9,Number($('margin').value)||0))/100,b=Number($('bid').value)||0;const base=h*c+m+t+o,total=base*(1+r),min=total/(1-mar),profit=b-total,actual=b?profit/b*100:0;$('totalCost').textContent=fmt(total);$('minPrice').textContent=fmt(min);$('profit').textContent=fmt(profit);$('profit').style.color=profit>=0?'var(--mint)':'#ffaaaa';$('actualMargin').textContent=actual.toFixed(1).replace('.',',')+' %';let text=b>=min?'Bra: ditt tänkta pris når ungefär din önskade marginal.':'Varning: ditt tänkta pris ligger under priset som krävs för önskad marginal.';$('advice').textContent=text+' Kontrollera att alla kostnader och risker är med.';return {h,c,m,t,o,r,mar,b,total,min,profit,actual};}
+ids.forEach(id=>$(id).addEventListener('input',calculate));calculate();
+function readParams(){const p=new URLSearchParams(location.search);ids.forEach(id=>{if(p.has(id))$(id).value=p.get(id)});calculate()}readParams();
+$('share').onclick=async()=>{const vals={};ids.forEach(id=>vals[id]=$(id).value);const url=new URL(location.href);url.search='';Object.entries(vals).forEach(([k,v])=>url.searchParams.set(k,v));try{if(navigator.share){await navigator.share({title:'Min anbudskalkyl',url:url.toString()})}else{await navigator.clipboard.writeText(url.toString());$('shareMsg').textContent='Länk till din kalkyl kopierad! Skicka den till någon.'}}catch(e){if(e.name!=='AbortError'){$('shareMsg').textContent='Kopiera länken från adressfältet för att dela kalkylen.'}}};
+$('reset').onclick=()=>{ids.forEach(id=>$(id).value=({hours:100,hourCost:250,material:5000,travel:1000,other:1500,risk:10,margin:20,bid:40000})[id]);history.replaceState({},'',location.pathname);calculate();};
+</script></body></html>
