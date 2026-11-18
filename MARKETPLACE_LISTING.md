@@ -81,3 +81,13 @@ Do not claim any listing is live until the submission is completed and a public 
 ## Submission status
 
 This file is prepared listing copy and channel research only. **No marketplace listing has been submitted or published.** Browser/form submission was not available in this workflow. Do not describe the project as listed until a public listing URL or platform confirmation is verified.
+
+
+## Fresh marketplace checks — 18 November 2026
+
+- **Uneed for-sale board:** https://www.uneed.best/for-sale currently shows 40 assets for sale and a median asking price of $5,000. Uneed states that no-revenue listings are capped at $10,000, so the $1,900 ask is within its stated range. Listing and buyer contact are free with no commission, but a confirmed-email account is needed. Uneed does not verify seller figures or hold funds; its own guidance recommends using escrow. This is a market snapshot, not a valuation of AnbudsRaket.
+- **SideProjectors seller controls:** the seller account must belong to the owner and be in the owner's name. An assistant may prepare listing content, but the owner remains responsible for submissions and payment. SideProjectors prohibits scraping and bulk messaging. Do not upload the public source repository into the listing; link the demo and describe the current implementation accurately.
+- **Masernet contact route:** https://masernet.com/en/contact. The official page uses a contact form and does not publish a direct acquisition email. It is a lower-priority licensing/white-label prospect because its current product already covers broad tender aggregation and AI scoring. Do not guess an email address or claim a message was submitted.
+- **Tendium:** the CEO was already contacted directly on 18 November 2026; do not duplicate the approach. The company publicly describes a much broader AI-powered B2G workflow and a large established customer base, so a small codebase sale is a low-probability strategic fit unless they respond.
+- **Falkview:** contact@falkview.com has already received two AnbudsRaket approaches on 18 November 2026. Do not send another message or follow-up before the three-business-day interval. Its public product already uses TED plus Swedish procurement sources, so any further discussion should focus narrowly on a licence or complementary niche component.
+- **No listing status change:** all channels above remain research/preparation only until the owner completes the account/form submission and a public listing URL or confirmation is verified.
