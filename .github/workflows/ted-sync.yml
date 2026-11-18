@@ -27,47 +27,95 @@ jobs:
           import datetime, json, urllib.request
           from pathlib import Path
 
-          since = (datetime.date.today() - datetime.timedelta(days=30)).strftime("%Y%m%d")
+          import datetime, json, time, urllib.request, urllib.error
+          from pathlib import Path
+
+          since = (datetime.date.today() - datetime.timedelta(days=365)).strftime("%Y%m%d")
+          query = f"publication-date >= {since} AND buyer-country = SWE AND (classification-cpv = 909* OR classification-cpv = 4544*)"
           payload = {
-              "query": f"publication-date>={since} AND buyer-country=SWE",
+              "query": query,
               "fields": [
                   "publication-number",
                   "publication-date",
                   "notice-title",
                   "buyer-name",
-                  "buyer-country",
                   "classification-cpv",
                   "deadline-receipt-tender-date-lot",
                   "notice-type"
               ],
               "limit": 250,
               "scope": "ACTIVE",
-              "paginationMode": "PAGE_NUMBER",
-              "page": 1,
+              "paginationMode": "ITERATION",
               "checkQuerySyntax": False
           }
-          req = urllib.request.Request(
-              "https://api.ted.europa.eu/v3/notices/search",
-              data=json.dumps(payload).encode("utf-8"),
-              headers={"Content-Type": "application/json", "Accept": "application/json"},
-              method="POST"
-          )
-          with urllib.request.urlopen(req, timeout=60) as response:
-              data = json.loads(response.read().decode("utf-8"))
-          if "notices" not in data:
-              raise RuntimeError("TED response did not contain notices: " + json.dumps(data)[:1000])
-          if not data["notices"]:
-              raise RuntimeError("TED returned zero notices for the date query. Response: " + json.dumps(data)[:1500])
+
+          notices = []
+          seen = set()
+          total = None
+          token = None
+          page = 0
+          while True:
+              request_payload = dict(payload)
+              if token:
+                  request_payload["iterationNextToken"] = token
+              req = urllib.request.Request(
+                  "https://api.ted.europa.eu/v3/notices/search",
+                  data=json.dumps(request_payload).encode("utf-8"),
+                  headers={"Content-Type": "application/json", "Accept": "application/json"},
+                  method="POST"
+              )
+              for attempt in range(4):
+                  try:
+                      with urllib.request.urlopen(req, timeout=60) as response:
+                          data = json.loads(response.read().decode("utf-8"))
+                      break
+                  except urllib.error.HTTPError as error:
+                      if error.code not in (429, 500, 502, 503, 504) or attempt == 3:
+                          raise
+                      time.sleep(2 ** attempt)
+              if "notices" not in data or not isinstance(data["notices"], list):
+                  raise RuntimeError("TED response did not contain a notices array: " + json.dumps(data)[:1000])
+              if data.get("timedOut"):
+                  raise RuntimeError("TED search timed out; refusing to publish partial data.")
+              if total is None:
+                  total = data.get("totalNoticeCount")
+              page += 1
+              batch = data["notices"]
+              print(f"Page {page}: {len(batch)} notices; total reported {total}")
+              if not batch:
+                  break
+              for notice in batch:
+                  publication_number = notice.get("publication-number")
+                  identity = publication_number or json.dumps(notice, sort_keys=True)
+                  if identity not in seen:
+                      seen.add(identity)
+                      notices.append(notice)
+              token = data.get("iterationNextToken")
+              if not token:
+                  if total is not None and len(notices) >= int(total):
+                      break
+                  raise RuntimeError(f"TED iteration token missing after non-empty page {page}; fetched {len(notices)} of {total}.")
+              if page >= 1000:
+                  raise RuntimeError("TED pagination safety limit reached; refusing to publish incomplete data.")
+              time.sleep(0.2)
+
+          if not notices:
+              raise RuntimeError("TED returned zero notices for the CPV/date query.")
+          if total is not None and len(notices) != int(total):
+              raise RuntimeError(f"Incomplete TED data: fetched {len(notices)} unique notices, TED reports {total}.")
           out = {
               "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
               "source": "TED Search API",
-              "total_notice_count": data.get("totalNoticeCount"),
-              "notices": data["notices"]
+              "query": query,
+              "window_days": 365,
+              "cpv_scope": ["909*", "4544*"],
+              "total_notice_count": total,
+              "retrieved_notice_count": len(notices),
+              "notices": notices
           }
           Path("data").mkdir(exist_ok=True)
-          Path("data/notices.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-          print(f"Saved {len(out['notices'])} notices")
-          PY
+          Path("data/notices.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+          print(f"Saved {len(notices)} notices across {page} pages")          PY
 
       - name: Commit updated data
         run: |
