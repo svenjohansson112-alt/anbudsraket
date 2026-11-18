@@ -1,5 +1,13 @@
 # AnbudsRaket AI – Pilot
 
+
+> **Projektet är till salu — USD 1,900, förhandlingsbart vid snabb affär.**
+> 
+> AnbudsRaket AI är en tidig fungerande MVP, pre-revenue och utan etablerade kunder. TED-täckningen är begränsad och de senaste automatiska datauppdateringarna har misslyckats; den kedjan behöver stabiliseras före produktionsbruk.
+>
+> - [Försäljningsöversikt och villkor](SALE.md)
+> - [Öppna livedemon](https://svenjohansson112-alt.github.io/anbudsraket/)
+
 Kostnadsfri pilot för små företag som vill hitta och prioritera offentliga upphandlingar inom exempelvis städning, lokalvård, fönsterputs och måleri.
 
 ## Så fungerar piloten
