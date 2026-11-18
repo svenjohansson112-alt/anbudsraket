@@ -28,7 +28,7 @@ jobs:
           from pathlib import Path
 
           since = (datetime.date.today() - datetime.timedelta(days=365)).strftime("%Y%m%d")
-          query = f"publication-date >= {since} AND buyer-country = SWE AND (classification-cpv = 909* OR classification-cpv = 4544*)"
+          query = f"publication-date >= {since} AND buyer-country = SWE AND (classification-cpv = 909* OR classification-cpv = 4544*) AND notice-type IN (cn-standard cn-social pin-only)"
           payload = {
               "query": query,
               "fields": [
@@ -106,6 +106,7 @@ jobs:
               "query": query,
               "window_days": 365,
               "cpv_scope": ["909*", "4544*"],
+              "notice_type_scope": ["cn-standard", "cn-social", "pin-only"],
               "total_notice_count": total,
               "retrieved_notice_count": len(notices),
               "notices": notices
