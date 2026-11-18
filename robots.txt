@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://svenjohansson112-alt.github.io/anbudsraket/sitemap.xml
