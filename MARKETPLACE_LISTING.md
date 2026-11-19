@@ -91,3 +91,32 @@ This file is prepared listing copy and channel research only. **No marketplace l
 - **Tendium:** the CEO was already contacted directly on 18 November 2026; do not duplicate the approach. The company publicly describes a much broader AI-powered B2G workflow and a large established customer base, so a small codebase sale is a low-probability strategic fit unless they respond.
 - **Falkview:** contact@falkview.com has already received two AnbudsRaket approaches on 18 November 2026. Do not send another message or follow-up before the three-business-day interval. Its public product already uses TED plus Swedish procurement sources, so any further discussion should focus narrowly on a licence or complementary niche component.
 - **No listing status change:** all channels above remain research/preparation only until the owner completes the account/form submission and a public listing URL or confirmation is verified.
+
+
+## Additional sale channels and prospect research — 19 November 2026
+
+### Newly verified free marketplaces
+
+- **SaaS For Sale:** https://saasforsale.com/ — free listing for 14 days, no listing fee and no commission. Listings can be submitted through the site or posted to r/SaaSForSale; the site says posts typically appear on its board within 24 hours. It is only a listing service, does not broker or hold funds, and recommends Escrow.com. Relisting after expiry is allowed. Keep the post factual and do not spam the community.
+- **Digimarket:** https://digimarket.info/sell-business — free listing and free manual verification, 0% commission, no subscription. Optional Premium Listing is $49 and must not be purchased. The operator explicitly says it is an information intermediary, not an escrow or payment provider; the transaction is directly between buyer and seller. Use a written asset-purchase agreement and independent licensed escrow if the buyer requests it. This is a secondary channel, not a guaranteed source of buyers.
+- **BuySellMVPs:** https://buysellmvps.com/ — explicitly positions itself as a marketplace for pre-revenue MVPs and says no commission, but the public page reviewed does not disclose a seller listing fee or a clear submission process. Do not assume it is free; verify before creating an account or paying anything.
+
+### Community distribution
+
+- **r/SaaSForSale:** https://www.reddit.com/r/SaaSForSale/ is specifically for buying and selling SaaS/internet businesses. A single transparent sale post is relevant; no repeated posts or unsolicited DMs. The community's companion board is SaaS For Sale above.
+- **r/SaaS:** do not use for a direct sale post. Its current rules prohibit unsolicited direct sales and tightly limit self-promotion. Do not risk a removal or account restriction.
+
+### New small-company prospects
+
+- **Anbudsvakt / EGF Group AB:** official terms identify the operator as EGF Group AB and publish hej@anbudsvakt.se. Its product monitors TED and Swedish ad databases. A carefully qualified draft is prepared, not sent. Potential fit is a small niche/CPV add-on or licence, not a presumed acquisition.
+- **Vunnet / Ethereal Labs AB:** public terms identify the operator and the site displays a contact email in masked form. Do not guess the address. Product is TED/statistics-heavy and more developed than this MVP; low-priority prospect unless a verified direct contact is found.
+- **AnbudsKompass:** a Swedish TED-based procurement product with AI matching and bid workflow. No verified direct acquisition contact was found in this pass; do not guess an email.
+- **Awarda:** EU-wide TED/CPV matching platform operated by Malkovich MB. Public contact found is support@awarda.eu, not a verified acquisition contact; do not send a cold acquisition pitch to support without finding a proper business contact.
+
+### Current outreach guardrails
+
+- Latest verified cold email: 18 November 2026 at 18:05 Sweden time.
+- Do not send another cold email before 19 November 2026 at 18:05 Sweden time.
+- After the cooldown, send at most three genuinely new, individually tailored emails per day. Search Gmail Sent first. No follow-up before three business days.
+- Existing drafts to Tendios, Govly, Stotles, Exsitec, Abacus IT, Consens and ETIntell remain drafts only. A further draft to Anbudsvakt is also prepared; none of these is a sent email.
+- No listing, buyer interest, offer or transaction is confirmed until a real submission/response/offer is verified.
