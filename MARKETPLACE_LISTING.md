@@ -138,3 +138,27 @@ This file is prepared listing copy and channel research only. **No marketplace l
 - After the cooldown, send at most three genuinely new, individually tailored emails per day. Search Gmail Sent first. No follow-up before three business days.
 - Existing drafts to Tendios, Govly, Stotles, Exsitec, Abacus IT, Consens and ETIntell remain drafts only. A further draft to Anbudsvakt is also prepared; none of these is a sent email.
 - No listing, buyer interest, offer or transaction is confirmed until a real submission/response/offer is verified.
+
+
+## Outreach log — 19 Nov 2026, 05:16 Sweden time
+
+Verified new emails sent:
+- Anbudsvakt / EGF Group AB — hej@anbudsvakt.se — 04:16:48 UTC.
+- Consens — info@consens.se — 04:16:49 UTC.
+- ETIntell — info@etintell.eu — 04:16:51 UTC.
+
+All three were verified in Gmail Sent. The latest send starts a fresh 24-hour cold-email cooldown through 20 Nov 2026, 05:16:51 Sweden time. No further cold emails today; afterward max three genuinely new personalized emails per day, with Gmail Sent checked first. Follow-ups to this batch wait at least three business days (earliest 24 Nov). Outreach from 18 Nov is not eligible for follow-up before 23 Nov.
+
+
+New prospects researched; tailored drafts created but not sent:
+- Fentlig — info@fentlig.se. Swedish tender discovery, document analysis, API/MCP. https://fentlig.se/
+- TendFeed / AnalystHAUS GmbH — info@analysthaus.com, verified on official legal page. Tender verdicts, competition-density data, API/MCP. https://tendfeed.eu/sv
+- Silmaril Technologies — hello@silmariltech.com, official sales address. Broad procurement discovery and bid execution. https://www.silmariltech.com/contact
+
+These are strategic hypotheses, not buyer interest. The drafts must be reconsidered after cooldown and sent only if appropriate; no duplicates or bulk messages.
+
+
+Inbox status: latest scan (19 Nov 2026, 05:16 Sweden time) found no substantive buyer response, acquisition interest or offer. Auftrag AF-4230 is an automated receipt; Mercell redirected to its support portal.
+
+
+Marketplace status: no listing is confirmed live; browser/form submission remains uncompleted. Continue free channels only. Do not claim publication without a verified public listing URL or confirmation. No paid listing, boost or subscription was purchased.
