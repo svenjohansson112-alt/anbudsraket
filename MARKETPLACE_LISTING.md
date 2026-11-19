@@ -93,6 +93,24 @@ This file is prepared listing copy and channel research only. **No marketplace l
 - **No listing status change:** all channels above remain research/preparation only until the owner completes the account/form submission and a public listing URL or confirmation is verified.
 
 
+## Additional marketplace research — 19 November 2026
+
+- **SaaS For Sale:** https://saasforsale.com/ — free 14-day listing, no commission. Listings may be submitted via the site; keep it factual and do not spam communities.
+- **Digimarket:** https://digimarket.info/sell-business — free listing and manual verification, 0% commission. Optional $49 promotion is not approved; do not purchase.
+- **BuySellStartups:** https://buysellstartups.com/pricing — $29 one-time listing, no commission; a free route is advertised only if embedding their badge. Do not pay or add a badge without owner approval.
+- **Buy-Startups.com:** https://www.buy-startups.com/ claims no listing fees and no commission, but trust and terms are not independently established; verify carefully before account creation or submission.
+- **StartExus:** https://www.startexus.com/sell — free listing and no success fee, but the marketplace states a typical deal range of $5,000–$1M, making the current $1,900 ask a likely mismatch. Skip unless eligibility is confirmed.
+- **Zero to Hundred:** https://zerotohundred.dev/sell — free software listing, but this is a non-exclusive software license, not an outright asset sale. The buyer receives source on purchase; seller fees are 8% for sales via own link or 25% for marketplace discovery. Only pursue if owner explicitly approves licensing and disclosure of the source.
+- **Sell Micro SaaS current snapshot:** https://sellmicrosaas.com/ reported 218 listings and $2,800 median asking price as of Nov 18, 2026. The side-project/pre-revenue section reported 149 listings and $2,500 median ask as of Nov 17. These are asking prices, not completed sales, and should not be treated as a valuation guarantee for AnbudsRaket.
+
+### Verified email activity and corrected cooldown
+- Three new personalized cold emails to Tendios, Govly (Oliver), and Stotles were actually sent and verified in Gmail Sent on **19 November 2026, 02:50:26–29 Sweden time**.
+- The 24-hour cooldown now ends **20 November 2026, 02:50:29 Sweden time**. No cold email before that.
+- After the cooldown: at most three new personalized emails per day, only genuinely new top-fit contacts, checking Gmail Sent first. Follow-ups wait three business days.
+- Exsitec, Abacus IT and other prospect drafts remain drafts unless sent is verified; don't report drafts as sent.
+- The last inbox check found no genuine buyer reply or offer. Auftrag was only an automatic receipt (AF-4230), Mercell only a support-portal reply.
+- Never claim a marketplace listing is live until submission and a public URL or confirmation are verified.
+
 ## Additional sale channels and prospect research — 19 November 2026
 
 ### Newly verified free marketplaces
