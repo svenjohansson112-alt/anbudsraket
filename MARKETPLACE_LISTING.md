@@ -162,3 +162,8 @@ Inbox status: latest scan (19 Nov 2026, 05:16 Sweden time) found no substantive 
 
 
 Marketplace status: no listing is confirmed live; browser/form submission remains uncompleted. Continue free channels only. Do not claim publication without a verified public listing URL or confirmation. No paid listing, boost or subscription was purchased.
+
+
+## Daily outreach-cap correction — 19 November 2026
+
+Six cold emails were sent on 19 November 2026: Tendios, Govly, and Stotles at 02:50 Sweden time, followed by Anbudsvakt, Consens, and ETIntell at 05:16 Sweden time. This exceeded the owner's stated cap of three new cold emails per calendar day. The automation instructions have been corrected to count every Gmail Sent message per Sweden-local calendar day and hard-stop once three are sent. No further cold email is permitted on 19 November. The cooldown after the latest send ends 20 November 2026 at 05:16:51 Sweden time. This correction is recorded transparently; do not repeat the cap violation.
